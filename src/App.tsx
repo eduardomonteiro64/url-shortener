@@ -1,9 +1,7 @@
 import React from "react"
-import axios, { Axios, AxiosError, AxiosResponse } from "axios"
-import Button from "./Components/Button"
-import Input from "./Components/Input"
+import axios, { AxiosError } from "axios"
+import { Button, Input, URLHistory } from "./Components"
 import styles from "./App.module.scss"
-import URLHistory from "./Components/URLHistory"
 
 const URLRegex =
   /(https?:\/\/(www\.)?)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
