@@ -1,0 +1,29 @@
+.clipboardButton {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.4rem;
+
+  path {
+    fill: #fff;
+    transition: 0.2s ease;
+  }
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  &.copied path {
+    fill: rgb(92, 241, 92);
+    transition: 0.2s ease;
+  }
+}
+
+// @keyframes wasCopied {
+//   from {
+//     fill: rgb(50, 214, 50);
+//   }
+//   to {
+//     fill: currentColor;
+//   }
+// }

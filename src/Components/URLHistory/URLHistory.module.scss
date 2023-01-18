@@ -10,6 +10,9 @@
     border-radius: 0.4rem;
     background-color: #252525;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   li:first-child {
