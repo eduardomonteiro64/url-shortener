@@ -1,0 +1,30 @@
+.mainPage {
+  display: grid;
+  justify-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  gap: 1rem;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .formContainer {
+    width: 100%;
+    margin-bottom: 3rem;
+
+    .error {
+      color: rgb(255, 195, 32);
+      padding: 0.4rem;
+    }
+  }
+
+  .form {
+    border-radius: 0.4rem;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+  }
+}
