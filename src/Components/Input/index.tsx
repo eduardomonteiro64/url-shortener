@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from "react"
+import React from "react"
 import styles from "./Input.module.scss"
 
 interface IInput {
@@ -16,7 +16,7 @@ const index = ({
   onChange,
   value,
   ...props
-}: IInput & InputHTMLAttributes<HTMLInputElement>) => {
+}: IInput & React.InputHTMLAttributes<HTMLInputElement>) => {
   return (
     <div className={styles.input}>
       {label && <label htmlFor={id}>{label}</label>}

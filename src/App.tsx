@@ -1,26 +1,9 @@
 import React from "react"
-import axios, { AxiosError } from "axios"
+import { AxiosError } from "axios"
 import { Button, Input, URLHistory } from "./Components"
 import styles from "./App.module.scss"
 
-const URLRegex =
-  /(https?:\/\/(www\.)?)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
-
-const localShortnedURLs: string[] = JSON.parse(
-  localStorage.getItem("shortnedURLs") || "[]"
-)
-
-const gotinyAPI = axios.create({
-  baseURL: "https://gotiny.cc/api",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  transformRequest: [
-    (data) => {
-      return JSON.stringify({ input: data })
-    }
-  ]
-})
+import { URLRegex, localShortnedURLs, gotinyAPI } from "./Utils/functions"
 
 const App = () => {
   const [link, setLink] = React.useState<string>("")
@@ -29,7 +12,6 @@ const App = () => {
   const [error, setError] = React.useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
     setLink(e.target.value)
   }
 
@@ -52,7 +34,6 @@ const App = () => {
       setLink("")
     } catch (e: unknown) {
       if (e instanceof Error || e instanceof AxiosError) {
-        console.error(e)
         error = e.message
         data = null
       }
@@ -86,7 +67,7 @@ const App = () => {
           />
           <Button>Enviar</Button>
         </div>
-        {error ? <p className={styles.error}>{error}</p> : null}
+        {error ?? <p className={styles.error}>{error}</p>}
       </form>
       <URLHistory shortnedLink={shortnedLink} />
     </section>

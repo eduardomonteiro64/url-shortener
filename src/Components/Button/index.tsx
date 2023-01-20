@@ -1,8 +1,8 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import styles from "./Button.module.scss"
 
 interface IButton {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 const index = ({ children }: IButton) => {
